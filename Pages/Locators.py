@@ -5,3 +5,8 @@ class PrPage(object):
     item_name = (By.CSS_SELECTOR, ".product_main h1")
     basketitem = (By.CSS_SELECTOR, ".alert:first-of-type strong")
     basketprice = (By.CSS_SELECTOR,".alert:last-child strong" )
+    success_message = (By.CSS_SELECTOR, ".alert:first-of-type")
+
+class BasePage(object):
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
