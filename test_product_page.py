@@ -1,5 +1,5 @@
 import pytest
-
+from Pages.MainPage import MainPage
 from Pages.ProductPage import Product
 import time
 #
@@ -59,6 +59,19 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
     page.open()
     page.should_be_login_link()
     page.go_to_login_page()
+
+def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    page = MainPage(browser, link)
+    page.open()
+    page.open_basket_page()
+    page.check_the_basket_message()
+    page.check_basket_price()
+
+
+
+
+
 
 
 
